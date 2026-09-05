@@ -42,6 +42,15 @@ async function initApp() {
 
         // Bind UI Event Listeners
         setupEventListeners();
+        // Register Service Worker for Offline PWA Installation
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(reg => console.log('Service Worker Registered Successfully:', reg.scope))
+            .catch(err => console.error('Service Worker Registration Failed:', err));
+    });
+}
+
 
     } catch (error) {
         console.error('App initialization failed:', error);
