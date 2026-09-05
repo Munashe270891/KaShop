@@ -6,6 +6,7 @@
 import { initDB, seedInitialData, getAllData } from './db.js';
 import { initCheckoutEngine, addProductToCart, getCartTotals, clearCart, processCheckout } from './checkout.js';
 import { initSyncEngine } from './sync.js';
+import { initQuietMode } from './quiet-mode.js';
 
 // DOM ELEMENTS
 const productGrid = document.getElementById('product-grid');
@@ -37,20 +38,23 @@ async function initApp() {
         // Render the Rush Hour Touch Grid
         await renderProductGrid();
 
+        // Initialize Quiet Mode Handlers
+        initQuietMode();
+
         // Start Sync Engine and Connection Monitor (Box 4)
         initSyncEngine(updateSyncBadge);
 
         // Bind UI Event Listeners
         setupEventListeners();
-        // Register Service Worker for Offline PWA Installation
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(reg => console.log('Service Worker Registered Successfully:', reg.scope))
-            .catch(err => console.error('Service Worker Registration Failed:', err));
-    });
-}
 
+        // Register Service Worker for Offline PWA Installation
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker Registered Successfully:', reg.scope))
+                    .catch(err => console.error('Service Worker Registration Failed:', err));
+            });
+        }
 
     } catch (error) {
         console.error('App initialization failed:', error);
