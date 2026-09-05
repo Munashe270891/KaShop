@@ -369,3 +369,81 @@ body {
     background-color: #E65100 !important;
     color: #FFF !important;
 }
+/* --- INTAKE & EXPENSE FORMS --- */
+.intake-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #AAA;
+    font-weight: bold;
+}
+
+.label-success { color: #00E676 !important; }
+.label-danger { color: #FF5252 !important; }
+
+.form-control {
+    height: 45px;
+    background-color: #121212;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #FFF;
+    padding: 0 10px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #00E5FF;
+    outline: none;
+}
+
+.highlight-success {
+    border-color: #2E7D32;
+    background-color: #1B331E;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.btn-primary-full {
+    width: 100%;
+    height: 50px;
+    background-color: #0288D1;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.btn-warning-full {
+    width: 100%;
+    height: 50px;
+    background-color: #E65100;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
