@@ -29,6 +29,87 @@
 
         <!-- QUIET MODE VIEW (Restocking & Rate Management) -->
 <main id="quiet-mode-view" class="view hidden">
+    <!-- SECTION 4: STOCK INTAKE & RECEIVING GOODS -->
+<section class="quiet-card">
+    <h2 class="section-title">📦 Receive Stock (Suppliers & Conditions)</h2>
+    <form id="form-stock-intake" class="intake-form">
+        
+        <div class="form-group">
+            <label>Select Product</label>
+            <select id="intake-product-select" class="form-control" required>
+                <!-- Populated via JS -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Supplier Name</label>
+            <input type="text" id="intake-supplier-name" class="form-control" placeholder="e.g. Bakers Inn, Mega Market" required />
+        </div>
+
+        <div class="form-row-2">
+            <div class="form-group">
+                <label>Unit Cost ($ USD)</label>
+                <input type="number" step="0.01" id="intake-unit-cost" class="form-control" placeholder="0.80" />
+            </div>
+            <div class="form-group">
+                <label class="label-success">Good Qty (To Stock)</label>
+                <input type="number" id="intake-qty-good" class="form-control highlight-success" placeholder="0" />
+            </div>
+        </div>
+
+        <div class="form-row-3">
+            <div class="form-group">
+                <label class="label-danger">Damaged Qty</label>
+                <input type="number" id="intake-qty-damaged" class="form-control" placeholder="0" />
+            </div>
+            <div class="form-group">
+                <label class="label-danger">Expired Qty</label>
+                <input type="number" id="intake-qty-expired" class="form-control" placeholder="0" />
+            </div>
+            <div class="form-group">
+                <label class="label-danger">Short Qty</label>
+                <input type="number" id="intake-qty-short" class="form-control" placeholder="0" />
+            </div>
+        </div>
+
+        <button type="button" id="btn-submit-intake" class="btn-primary-full">LOG STOCK INTAKE</button>
+    </form>
+</section>
+
+<!-- SECTION 5: DAILY OPERATING EXPENSES -->
+<section class="quiet-card">
+    <h2 class="section-title">💸 Record Shop Expense / Loss</h2>
+    <form id="form-shop-expense" class="intake-form">
+        
+        <div class="form-row-2">
+            <div class="form-group">
+                <label>Category</label>
+                <select id="expense-category-select" class="form-control" required>
+                    <option value="">-- Select --</option>
+                    <option value="RENT">Rent</option>
+                    <option value="FUEL_GENERATOR">Fuel / Generator</option>
+                    <option value="TRANSPORT">Transport / Restock Travel</option>
+                    <option value="COUNCIL_LEVIES">Council Levies / Taxes</option>
+                    <option value="DAMAGED_EXPIRED_STOCK">Damaged / Expired Stock</option>
+                    <option value="OTHER">Other Expenses</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Amount ($ USD)</label>
+                <input type="number" step="0.01" id="expense-amount-usd" class="form-control" placeholder="0.00" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Notes / Reason</label>
+            <input type="text" id="expense-notes" class="form-control" placeholder="e.g. 5L Diesel for generator or Rats ate 2 loaves" />
+        </div>
+
+        <button type="button" id="btn-submit-expense" class="btn-warning-full">LOG EXPENSE</button>
+    </form>
+</section>
+
     <div class="quiet-container">
         
         <!-- SECTION 1: DAILY EXCHANGE RATES -->
