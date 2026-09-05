@@ -26,6 +26,50 @@
 
     <!-- RUSH HOUR VIEW (DEFAULT) -->
     <main id="rush-hour-view" class="view active-view">
+
+        <!-- QUIET MODE VIEW (Restocking & Rate Management) -->
+<main id="quiet-mode-view" class="view hidden">
+    <div class="quiet-container">
+        
+        <!-- SECTION 1: DAILY EXCHANGE RATES -->
+        <section class="quiet-card">
+            <h2 class="section-title">Today's Exchange Rates (per $1 USD)</h2>
+            <div id="rate-inputs-container" class="rates-grid">
+                <!-- Dynamically Populated by quiet-mode.js -->
+            </div>
+            <button id="btn-save-rates" class="btn-success-full">UPDATE RATES</button>
+        </section>
+
+        <!-- SECTION 2: CHIKWERETI DEBT SUMMARY -->
+        <section class="quiet-card debt-card">
+            <div class="debt-info">
+                <span>Total Outstanding Credit:</span>
+                <strong id="total-unpaid-debt">$0.00 USD</strong>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STOCK RECONCILIATION TABLE -->
+        <section class="quiet-card">
+            <h2 class="section-title">Inventory Restock & Reconciliation</h2>
+            <div class="table-wrapper">
+                <table class="stock-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>USD Price</th>
+                            <th>Stock Count</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stock-table-body">
+                        <!-- Dynamically Populated by quiet-mode.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</main>
+
         
         <!-- PRODUCT GRID (Big Touch Tiles) -->
         <section class="grid-container" id="product-grid">
